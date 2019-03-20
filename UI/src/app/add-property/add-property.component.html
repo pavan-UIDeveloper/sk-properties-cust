@@ -1,0 +1,241 @@
+<div class="about">
+    <div class="container-fliud">
+      <!-- <div class="row"> -->
+        <div class="col-md-12">
+          <img src="assets/banner.jpg" class="about_img img-responsive" alt="banner">
+          <div class="page-title">
+            <div class="container">
+              <div class="banner-inner">
+                  <h3 class="text-center">Add Property</h3>
+              </div>
+            </div>
+            <div class="pages-breadcrumb">
+              <div class="container navig">
+                <ol class="breadcrumb page-breadcrumb pull-right bg-white">
+                  <li><a class="2" routerLink="/" routerLinkActive="active">Home </a></li>
+                  <li class="active"> | Register/Add Property</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+  <div class="box">
+      <div class="container">
+          <h3 class="text-center">Eneter Property Details</h3>
+
+    <form (ngSubmit)="saveProperty()" #form="ngForm">
+      <h5>Property Basics</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <select class="form-control" name="propertyFor" required [(ngModel)]="properties.propertyFor">
+            <option valu="">Select Property For</option>
+            <option *ngFor="let item of propertyFor" [value]='item'>{{item}}</option>
+  
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control" required name='types' [(ngModel)]="properties.types">
+            <option value="undefined" selected>Select Property Type</option>
+            <option *ngFor="let item of types" [value]='item.typeId'>{{item.type}}</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control" required name="property_tittle" [(ngModel)]="properties.property_tittle" placeholder="Enter Property Tittle">
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-2">
+          <select class="form-control" name='country' required [(ngModel)]="properties.country" (change)='getStatesBycountryId($event)'>
+            <option value="undefined">Select country</option>
+            <option *ngFor= 'let item of country' [value]="item.countryId">{{item.countryName}}</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <select class="form-control" name='state' required [(ngModel)]="properties.states" (change)="getDistrictsByStateId($event)">
+            <option>Select State</option>
+            <option *ngFor="let item of states" [value]="item.states">{{item.stateName}}</option>
+  
+          </select>
+        </div>
+        <div class="col-md-2">
+          <select class="form-control" name='districts' required [(ngModel)]="properties.districts" (change)="getMandalsByDistrictId($event)">
+            <option>Select District</option>
+            <option *ngFor="let item of districts" [value]="item.districts">{{item.districtName}}</option>
+  
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-control" name='mandals' required [(ngModel)]="properties.mandals" (change)="getVillagesByMandalId($event)">
+            <option>Select Mandal</option>
+            <option *ngFor="let item of mandals" [value]="item.mandals">{{item.mandalName}}</option>
+  
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-control" name='villages' required [(ngModel)]="properties.villages">
+            <option>Select Village</option>
+            <option *ngFor="let item of villages" [value]="item.villages">{{item.villageName}}</option>
+  
+          </select>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-10">
+          <label>Propery Description</label>
+          <textarea rows="5" name='Propery_Description' required [(ngModel)]="properties.propery_description" class="form-control"></textarea>
+        </div>
+      </div>
+      <h5>Property Statuses</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <select class="form-control" name='statuses' required [(ngModel)]="properties.statuses">
+            <option>Select Property status</option>
+            <option *ngFor="let item of statuses" [value]="item.menuId">{{item.statuses}}</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control" name='possession' required [(ngModel)]="properties.possessions">
+            <option>Select Possession</option>
+            <option *ngFor="let item of possession" [value]="item.menuId">{{item.possession}}</option>
+  
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control" name='age' required [(ngModel)]="properties.age">
+            <option>Select Age Of property</option>
+            <option *ngFor="let item of age" [value]="item.menuId">{{item.age}}</option>
+  
+          </select>
+        </div>
+      </div>
+      <h5>Property Mesurements</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <input type="text" class="form-control" required name='property_area' [(ngModel)]="properties.property_area" placeholder="Property Area">
+        </div>
+        <div class="col-md-4">
+          <select class="form-control" name='measurements' [(ngModel)]="properties.measurements">
+            <option>Square Yards</option>
+            <option *ngFor="let item of measurements" [value]="item.menuId">{{item.measurements}}</option>
+  
+          </select>
+        </div>
+      </div>
+      <h5>Property Price</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <input type="text" class="form-control" name='property_price' required [(ngModel)]="properties.property_price" placeholder="Property Price">
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control" name='show_text_on_property' required [(ngModel)]="properties.show_text_on_property" placeholder="Show text On Property">
+        </div>
+      </div>
+      <h5>Property Amenities</h5>
+      <div class="row m-2">
+        <div class="form-check">
+          <div *ngFor="let item of amenities;let i=index">
+          <label class="form-check-label">
+            <input type="checkbox" [checked]="item.isSelected" class="form-check-input"  name="properties_amenities" required [(ngModel)]="amenities[i].isSelected">{{item.isSelected}},{{item.amenities}}
+          </label>
+        </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <input type="text" class="form-control" name='bedroom' required [(ngModel)]="properties.bedroom" placeholder="Bed Room">
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" name='bathroom'required [(ngModel)]="properties.bathroom" placeholder="Bath Room">
+        </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" name='balcony' required [(ngModel)]="properties.balcony" placeholder="Balcony">
+        </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" name='poojaroom' required [(ngModel)]="properties.poojaroom" placeholder="Pooja Room">
+        </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" name='surventroom' required [(ngModel)]="properties.surventroom" placeholder="Survent Room">
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <select class="form-control" name='property_facing'required [(ngModel)]="properties.facing">
+            <option>Select Facing</option>
+            <option *ngFor="let item of facing" [value]="item.menuId">{{item.facing}}</option>
+  
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control" name='property_furnishingStates' required [(ngModel)]="properties.furnishingStates">
+            <option>Select Furnishing</option>
+            <option *ngFor="let item of furnishingStates" [value]="item.menuId">{{item.furnishingStates}}</option>
+  
+            
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select class="form-control" name='property_flooring' required [(ngModel)]="properties.flooring">
+            <option>Select Flooring </option>
+            <option *ngFor="let item of flooring" [value]="item.menuId">{{item.floorings}}</option>
+          </select>
+        </div>
+      </div>
+      <h5>Property Parking</h5>
+      <div class="row m-2">
+        <div class="form-check">
+          <div *ngFor="let item of parkings;let i=index">
+          <label class="form-check-label">
+            <input type="checkbox" name="properties_parkings" [(ngModel)]="parkings[i].isSelected" class="form-check-input">{{item.parkings}}
+          </label>
+        </div>
+        </div>
+      </div>
+      <h5>Is Hot Property</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <select class="form-control" name='property_isHotProperty' required [(ngModel)]="properties.isHotProperty">
+            <option>Is Hot property</option>
+            <option *ngFor="let item of isHotProperty" [value]="item">{{item}}</option>
+          </select> </div>
+        <div class="col-md-4">
+          <select class="form-control" name='property_pendingData' required [(ngModel)]="properties.pendingData">
+            <option>All</option>
+            <option *ngFor="let item of pendingData" [value]="item">{{item}}</option>
+  
+          </select>
+        </div>
+      </div>
+      <h5>Upload Owner Image</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <input type=file (change)="uploadOwnerImage($event)" required class="from-control">
+          <div *ngIf="previewImage">
+          <img width='100px' height="100px" [src]="previewImage">
+        </div>
+        </div>
+      </div>
+      <h5>Upload Property Images</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <input type=file multiple (change)="uploadPropertyImages($event)" required class="from-control">
+          <div *ngIf="url">
+            <div *ngFor="let item of url">
+          <img width='100px' height="100px" [src]="item">
+        </div>
+        </div>
+        </div>
+      </div>
+      <h5>Upload Property LayOuts</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <input type=file multiple (change)="uploadLayoutFiles($event)" required class="from-control">
+        </div>
+      </div>
+      <button class="btn btn-success mt-3">{{saveeditbtn}}</button>
+    </form>
+    
+  </div>
+  </div>

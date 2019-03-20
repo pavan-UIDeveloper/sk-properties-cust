@@ -1,0 +1,39 @@
+.contact-feedback-form {
+    background-color: #f2f4f5;
+    width: 100%;
+    padding: 41px 33px;
+    display: inline-block;
+}
+
+.contact-feedback-form form {
+    margin-top: 30px;
+    display: inline-block;
+    width: 100%;
+}
+
+.contact-feedback-form input, .contact-feedback-form textarea {
+    border: none;
+    border-bottom: 2px solid #c8c8c8;
+    background-color: #f2f4f5;
+    padding: 12px 0;
+    box-shadow: none;
+    height: auto;
+    width: 100%;
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    border-radius: 0;
+}
+
+a, select, input, textarea {
+    outline: 0 !important;
+}
+.contact-feedback-form [type="submit"] {
+    color: #fff;
+    background-color: #f55a4e;
+    font-weight: 400;
+    border: none;
+    padding: 12px 35px;
+    display: inline-block;
+    width: auto;
+    border-radius: 0;
+}

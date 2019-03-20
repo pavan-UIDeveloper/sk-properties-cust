@@ -1,0 +1,121 @@
+<div class="about">
+  <div class="container-fliud">
+    <!-- <div class="row"> -->
+      <div class="col-md-12">
+        <img src="assets/banner.jpg" class="about_img img-responsive" alt="banner">
+        <div class="page-title">
+          <div class="container">
+            <div class="banner-inner">
+              <p class="text-center">REGISTER/LOGIN</p>
+            </div>
+          </div>
+          <div class="pages-breadcrumb">
+            <div class="container navig">
+              <ol class="breadcrumb page-breadcrumb pull-right">
+                <li><a routerLink="/home">Home</a></li>
+                <li class="active">Register/Login</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-6">
+
+      <div class="form-check in">
+          <p class="text-success">{{RegisterdSuccessFully}}</p>   
+
+        <ul>
+          <li>
+            <h5>Register</h5>
+          </li>
+          <li>
+            <input required class="form-check-input pr-3" [(ngModel)]="custSignUpdeails.customerType" type="radio" name="customerType"  value="Individual">
+            <label class="form-check-label" for="customerType2">
+              Individual
+            </label>
+          </li>
+          <li>
+            <input required class="form-check-input" [(ngModel)]="custSignUpdeails.customerType" type="radio" name="customerType"  value="Agent">
+            <label class="form-check-label" for="customerType2">
+              Agent
+            </label>
+          </li>
+          <li>
+            <input required class="form-check-input" [(ngModel)]="custSignUpdeails.customerType" type="radio" name="customerType"  value="Builder">
+            <label class="form-check-label" for="customerType2">
+              Builder
+            </label>
+          </li>
+          <li>
+            <input required class="form-check-input" [(ngModel)]="custSignUpdeails.customerType" type="radio" name="customerType"  value="other">
+            <label class="form-check-label" for="customerType2">
+              Other
+            </label>
+          </li>
+        </ul>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text fa fa-user" id="basic-addon1"></span>
+        </div>
+        <input required type="text" class="form-control" [(ngModel)]="custSignUpdeails.customerName"  placeholder="Customer Name" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text fa fa-envelope" id="basic-addon1"></span>
+        </div>
+        <input required type="text" class="form-control"  [(ngModel)]="custSignUpdeails.email" placeholder="User Email" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text fa fa-mobile" id="basic-addon1"></span>
+        </div>
+        <input required type="text" class="form-control"  [(ngModel)]="custSignUpdeails.mobileNumber" placeholder="User Mobile Number" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text fa fa-lock" id="basic-addon1"></span>
+        </div>
+        <input required type="password" class="form-control" [(ngModel)]="custSignUpdeails.password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text fa fa-refresh" id="basic-addon1"></span>
+        </div>
+        <input required type="password" class="form-control" [(ngModel)]="reenterdPassword" placeholder="ReEnter Password" #reenter aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <p style="color:tomato" *ngIf="passwrdmatch">{{passwordNotMatched}}</p>
+      <div>
+        <button class="btn btn-primary" (click)="customerSignUp($event)">Register Now</button>
+      </div>
+      <div>&nbsp;</div>
+    </div>
+  
+    <div class="col-md-4 offset-md-2 jumbotron">
+      <form (ngSubmit)="customerLogin()" #form="ngForm">
+        <h4>Login</h4>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text fa fa-user" id="basic-addon1"></span>
+          </div>
+          <input required type="text" name="email" [(ngModel)]="loginDetails.email" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text fa fa-lock" id="basic-addon1"></span>
+          </div>
+          <input required type="password" name="pasw" class="form-control" [(ngModel)]="loginDetails.password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <button type="submit" class="btn btn-primary">Login Now</button>
+      </form>
+    </div>
+  </div>
+</div>

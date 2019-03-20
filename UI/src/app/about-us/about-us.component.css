@@ -1,0 +1,36 @@
+.backcolor{
+    background-color: #f2f4f5 !important;
+    margin-right: 0px
+}
+.about{padding:10px 0;}
+.about_cnt{padding:55px 0;}
+.about_cnt p{text-align: justify;}
+.about_img{height:150px;width:100%;position: relative;z-index:-1;}
+.banner-inner{position: absolute;top:150px;background:#272727;font-size: 25px;width:150px;font-weight: bold;height:40px;color: white}
+.navig{position: absolute;top: 222px;}
+.dropdown{padding:20px 0;}
+.select_class{
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid #c8c8c8;
+    padding: 10px;
+    display: block;
+    margin:auto;
+    border-radius: 0;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+.select_class1{
+    margin-left: -20px;
+
+}
+.htags{
+    padding-top: 25px ;
+    margin-left: 50px 
+
+}

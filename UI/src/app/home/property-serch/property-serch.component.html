@@ -1,0 +1,97 @@
+<div class="container mt-5">
+  <h3 class="text-danger text-center">Property Search</h3>
+  <div class="row">
+    <div class="col-md-3">
+    <select name="pt" class="form-control" id="pt">
+      <option value="">Select Property Type</option>
+<option value="6">Agriculture Land</option>
+<option value="5">Comercial Plot</option>
+<option value="9">Commercial Space</option>
+<option value="8">Farm House</option>
+<option value="7">Flat</option>
+<option value="3">Independent Houses</option>
+<option value="1">Residential Plot</option>
+<option value="4">Villas</option>
+<option value="11">www</option>
+</select>										 			
+  </div>  
+  <div class="col-md-3">
+<select class="form-control" style="width:160px;" id="state" name="sta">
+    <option value="">Select State</option>
+    <option value="2">Andhra Pradesh</option>
+    <option value="32">Telangana</option>
+  </select>   
+  </div>
+  <div class="col-md-3">
+      <select class="form-control" id="districts_id" name="dis">
+    <option value="">Select District</option>
+  </select> 
+</div>   
+<div class="col-md-3">
+  <select class="form-control" id="mandals_id" onchange="js:getVillages(this.value)" name="man">
+<option value="">Select Mandal</option>
+</select>	
+</div>
+</div>	
+<div class="row">
+  <div class="col-md-3">
+    <select class="form-control" id="villages_id" name="are">
+      <option value="">Select Village/Area</option>
+    </select>								 			
+  </div>
+  <div class="col-md-2">
+  <select class="form-control caret">
+    <option class="caret" value="">Select BHK</option>
+    <option value="1">1 BHK</option>
+    <option value="2">2 BHK</option>
+    <option value="3">3 BHK</option>
+  <option value="">Any</option>
+</select>
+</div>
+
+<div class="col-md-3">
+<select class="form-control">
+  <option value="">Select Bath Rooms</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="">Any</option>
+</select>
+</div>
+<div class="col-md-2">
+<select class="form-control" name="min">
+  <option value="">Min Price</option>
+  <option value="5">5 Lac</option>
+  <option value="10">10 Lac</option>
+  <option value="20">20 Lac</option>
+  <option value="30">30 Lac</option>
+  <option value="40">40 Lac</option>
+  <option value="50">50 Lac</option>
+  <option value="60">60 Lac</option>
+  <option value="70">70 Lac</option>
+  <option value="80">80 Lac</option>
+  <option value="90">90 Lac</option>
+  <option value="100">1 Cr+</option>
+</select>
+</div>
+<div class="col-md-2">
+<select class="form-control" name="max">
+                  <option value="">Max Price</option>
+                  <option value="5">5 Lac</option>
+                  <option value="10">10 Lac</option>
+                  <option value="20">20 Lac</option>
+                  <option value="30">30 Lac</option>
+                  <option value="40">40 Lac</option>
+                  <option value="50">50 Lac</option>
+                  <option value="60">60 Lac</option>
+                  <option value="70">70 Lac</option>
+                  <option value="80">80 Lac</option>
+                  <option value="90">90 Lac</option>
+                  <option value="100">1 Cr+</option>
+                </select>
+              </div>  
+                
+              </div>
+
+      <button class="btn btn-danger mx-auto d-block">Search</button>
+            </div>

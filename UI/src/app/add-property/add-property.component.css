@@ -1,0 +1,11 @@
+.about{padding:10px 0;}
+.about_cnt{padding:55px 0;}
+.about_cnt p{text-align: justify;}
+.about_img{height:150px;width:100%;position: relative;z-index:-1;}
+.banner-inner{position: absolute;top:40px;background:#272727;font-size: 25px;width:230px;font-weight: bold;height:40px;color: white}
+.navig{position: absolute;top: 120px;}
+.dropdown{padding:20px 0;}
+.in ul li{display: inline;
+    margin: 0;
+    padding:0 16px;
+}

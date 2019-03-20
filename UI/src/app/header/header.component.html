@@ -1,0 +1,171 @@
+
+<!-- Navigation -->
+<!-- <div class="navbar navbar-expand-lg navbar-dark bg-danger p-3 fixed-top">
+  <div class="text-white">9701148911</div>
+  <div class="text-white">pavan@gmail.com</div>
+  <div class="text-white">Login</div>
+
+
+</div>
+<nav class="navbar navbar-expand-lg navbar-light p-3 bg-light shadow mt-5">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<header>
+    
+  <div class="container-fluid no-padding bg-color ">
+    <div class="row">
+        <div class="col-sm-4 col-xs-12 text-white font-weight-bold text-center height pt-3">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+                      <span>{{phone}}</span>
+                    </div>
+
+                    <div class="col-sm-4 col-xs-12 pt-3">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        <span class="text-white font-weight-bold">{{email}}</span>
+                      </div>
+                      
+                      
+                      <div class="col-md-4 col-xs-12 col-lg-2 text-white text-center pt-3 ">
+                        <a *ngIf="!customerService.isAuth()" class="text-white font-weight-bold" routerLink="/login">Login</a>
+                        <a *ngIf="customerService.isAuth()" class="text-white font-weight-bold" routerLink="/logOut">LougOut</a>
+
+                      </div>
+    </div>
+  </div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4 col-sm-6 col-md-6">
+      <img class="img-responsive" src="http://www.skumarproperties.com/images/log.png" alt="">
+    </div>
+  
+    <div class="col-xs-4 col-sm-4 col-md-4" >
+      <nav class="navbar navbar-expand-lg" style="color: black">
+        <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span  class="fa fa-bars"></span>
+          
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav">
+            
+            <li class="nav-item">
+              
+              <a class="nav-link color" routerLink = "/">
+                Home
+              </a></li>
+              
+              <li class="nav-item">
+                
+                <a class="nav-link color" routerLink = "/aboutus" routerLinkActive="active">
+                  About Us
+                </a></li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle color" id="navbardrop" data-toggle="dropdown"
+                  routerLinkActive="active">Properties</a>
+                  <div class="dropdown-menu">
+                    
+                    <a class="dropdown-item" routerLink="" routerLinkActive="active">For Sale</a>
+                    <a class="dropdown-item" routerLink="" routerLinkActive="active">Required</a>
+                    <a class="dropdown-item" routerLink="" routerLinkActive="active">Property Management</a>
+                  </div>
+                </li>
+                
+                <!-- <div class="dropdown">
+                  <button class="dropbtn">Dropdown</button>
+                  <div class="dropdown-content">
+                    <a href="#">For Sale</a>
+                    <a href="#">Required</a>
+                    <a href="#">Property Management</a>
+                  </div>
+                </div> -->
+                <li class="nav-item">
+                  
+                  <a class="nav-link color" routerLink = "/contactus" routerLinkActive="active">
+                    Contact Us
+                  </a></li>
+
+                </ul>
+
+                </div>
+              
+              
+              </nav>
+            
+
+              <!-- <nav class="navbar navbar-expand-lg navbar-light p-3 bg-light shadow mt-5">
+                <div class="container">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                  <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                              <span class="sr-only">(current)</span>
+                            </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav> -->
+
+
+            </div>
+              
+      <!-- <div class="dropdown">
+          <button class="dropbtn">Dropdown</button>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div> -->
+        <div class="col-xs-4 col-sm-2 col-md-2">
+          <button routerLink="/addproperty" class="btn btn-danger btn-sm mt-2">Add Property</button>
+
+          </div>
+
+        </div>
+
+</div>
+</header>
+            
+        
+            
+            
+            <!-- Header Container Ends -->
+
+
+
